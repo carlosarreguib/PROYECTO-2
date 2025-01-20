@@ -26,6 +26,7 @@ El último apartado está desarrollado en `Power BI` con `Python` y `Power Query
 - Visualización interactiva de los datos.
 - Visualización de modelos. 
 <br>
+
 ```python
 # Instalación de paquetes
 pip install pandas
