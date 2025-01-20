@@ -5,7 +5,7 @@
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional. Y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA.
 El proyecto consta de 3 apartados. <br>
 Los dos primeros están desarrollados con `WindSurf` con el fin de crear código con el mínimo esfuerzo en `Python`. (Solo habría que corregir o añadir puntualmente).<br>
-El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` en el backend, y `R` en frontend. <br>
+El último apartado está desarrollado en `Power BI` con `Python` y `Power Query` en el back-end, y `R` en front-end. <br>
 > Procesamiento de datos
 - Análisis exploratorio de datos.
 - Llenado o eliminaciónde datos nulos.
