@@ -5,7 +5,7 @@
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional. Y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA.
 El proyecto consta de 3 apartados. <br>
 Los dos primeros están desarrollados con `WindSurf` con el fin de crear código con el mínimo esfuerzo en `Python`. (Solo habría que corregir o añadir puntualmente).<br>
-El último apartado está desarrollado en `Power BI` con `Python` y `Power Query` en el back-end, y `R` en front-end. <br>
+El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` en el backend, y `R` en frontend. <br>
 > Procesamiento de datos
 - Análisis exploratorio de datos.
 - Llenado o eliminaciónde datos nulos.
@@ -26,7 +26,6 @@ El último apartado está desarrollado en `Power BI` con `Python` y `Power Query
 - Visualización interactiva de los datos.
 - Visualización de modelos. 
 <br>
-  
 ```python
 # Instalación de paquetes
 pip install pandas
@@ -35,4 +34,5 @@ pip install matplotlib
 pip install sklearn
 pip install tensorflow
 ```
+<br>
 ![](https://impelia.org/wp-content/uploads/2022/05/Logo.png)
