@@ -1,6 +1,6 @@
-## Proyecto 2: Predicción del precio de la vivienda en Barcelona 
-*Juan Pablo Delzo*<br>
-*Carlos Arregui*<br> <br>
+## Proyecto 2: Predicción del precio de alquiler de la vivienda en Barcelona 
+***Juan Pablo Delzo***<br>
+***Carlos Arregui***<br> <br>
 :octocat: :fire: :pray: :muscle: :walking: :thumbsup:<br> <br>
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional, y gracias al feedback recibido. El siguiente paso es utilizar herramientas en IA.
 El proyecto consta de 3 apartados. <br>
@@ -25,12 +25,13 @@ El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` 
 > Explotación de datos
 - Visualización interactiva de los datos.
 - Visualización de modelos. 
-<br>
-```python
-# Instalación de paquetes
-pip install pandas
-pip install numpy
-pip install matplotlib
-pip install sklearn
-pip install tensorflow
-```
+
+*Orden en WindSurf:* <br>
+Con Python, Pandas y Matplotlib con fondo fivethirtyeight, con el archivo adjunto en input: <br>
+#### Elimina la columna `Unnamed: 0`. 
+#### Analiza qué columnas tienen valores nulos. 
+#### Si la columna `neighborhood` no tiene valores nulos, reemplaza los valores nulos en función de la moda en su columna de cada valor de `neighborhood`. 
+#### Chequea si `square_meters_price` * `square_meters` difieren con price con una tolerancia de 500 euros. 
+#### Elimina la columna `square_meters_price`. Detecta si hay outliers en `price` y apartalos del dataframe. 
+#### Analiza si hay una relación lineal entre `price` promedio y `neighborhood`. Si tal valor es menor de 0.1, con get_dummies de Pandas, transforma la columna `neighborhood` con drop_first True. 
+#### Guarda el dataframe final en un archivo csv.
