@@ -26,12 +26,12 @@ El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` 
 - Visualización interactiva de los datos.
 - Visualización de modelos. 
 
-*Orden en WindSurf:* <br>
-Con Python, Pandas y Matplotlib con fondo fivethirtyeight, con el archivo adjunto en input: <br>
-#### Elimina la columna `Unnamed: 0`. 
-#### Analiza qué columnas tienen valores nulos. 
-#### Si la columna `neighborhood` no tiene valores nulos, reemplaza los valores nulos en función de la moda en su columna de cada valor de `neighborhood`. 
-#### Chequea si `square_meters_price` * `square_meters` difieren con price con una tolerancia de 500 euros. 
-#### Elimina la columna `square_meters_price`. Detecta si hay outliers en `price` y apartalos del dataframe. 
-#### Analiza si hay una relación lineal entre `price` promedio y `neighborhood`. Si tal valor es menor de 0.1, con get_dummies de Pandas, transforma la columna `neighborhood` con drop_first True. 
-#### Guarda el dataframe final en un archivo csv.
+**Orden en WindSurf:** <br>
+Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adjunto en input: <br>
+1. Elimina la columna `Unnamed: 0`. 
+2. Analiza qué columnas tienen valores nulos. 
+3. Si la columna `neighborhood` no tiene valores nulos, reemplaza los valores nulos en función de la moda en su columna de cada valor de `neighborhood`. 
+4. Chequea si `square_meters_price` * `square_meters` difieren con price con una tolerancia de 500 euros. 
+5. Elimina la columna `square_meters_price`. Detecta si hay outliers en `price` y apartalos del dataframe. 
+6. Analiza si hay una relación lineal entre `price` promedio y `neighborhood`. Si tal valor es menor de 0.1, con get_dummies de Pandas, transforma la columna `neighborhood` con drop_first True. 
+7. Guarda el dataframe final en un archivo csv.
