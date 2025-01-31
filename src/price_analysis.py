@@ -55,7 +55,7 @@ print(f"\nCorrelation coefficient between neighborhood and average price: {corre
 # If correlation is less than 0.1, create dummy variables
 if abs(correlation) < 0.1:
     print("\nCreating dummy variables for neighborhood...")
-    df_clean = pd.get_dummies(df_clean, columns=['neighborhood'], drop_first=True)
+    df_clean = pd.get_dummies(df_clean, columns=['neighborhood'], drop_first=True,dtype=int)
 
 # Save the final dataframe
 output_path = 'output/barcelona_housing_processed.csv'
