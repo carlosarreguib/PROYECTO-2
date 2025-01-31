@@ -9,6 +9,7 @@ plt.style.use('fivethirtyeight')
 
 # Read the data
 df = pd.read_csv('input/DATA_Barcelona_Fotocasa_HousingPrices_Augmented.csv')
+print("\nNumber of rows: ", len(df))
 
 # Remove Unnamed: 0 column
 df = df.drop('Unnamed: 0', axis=1)
@@ -39,10 +40,11 @@ lower_bound = Q1 - 1.5 * IQR
 upper_bound = Q3 + 1.5 * IQR
 
 print("\nOutliers in price:")
-print(f"Number of outliers: {((df['price'] < lower_bound) | (df['price'] > upper_bound)).sum()}")
+outliers=((df['price'] < lower_bound) | (df['price'] > upper_bound))
+print(f"Number of outliers: {outliers.sum()} {outliers.sum()/len(df)*100:.2f}%")
 
 # Create clean dataframe without outliers
-df_clean = df[~((df['price'] < lower_bound) | (df['price'] > upper_bound))]
+df_clean = df[~outliers]
 
 # Analyze linear relationship between average price and neighborhood
 avg_price_by_neighborhood = df_clean.groupby('neighborhood')['price'].mean().reset_index()
