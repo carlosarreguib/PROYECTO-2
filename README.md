@@ -4,7 +4,7 @@
 :octocat: :fire: :pray: :muscle: :walking: :thumbsup:<br> <br>
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional, y gracias al feedback recibido. El siguiente paso es utilizar herramientas en IA.
 El proyecto consta de 3 apartados. <br>
-Los dos primeros están desarrollados con `WindSurf` con el fin de crear codigo con el mínimo esfuerzo en `Python`. (Solo habría que corregir o añadir puntualmente).<br>
+Los dos primeros están desarrollados con `WindSurf`, con el fin de crear codigo con el mínimo esfuerzo en `Python`. (Solo habría que corregir o añadir puntualmente).<br>
 El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` en el backend, y `R` en el frontend. <br>
 > Procesamiento de datos
 - Análisis exploratorio de datos.
