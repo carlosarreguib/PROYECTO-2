@@ -27,6 +27,7 @@ El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` 
 - Visualización de modelos. 
 
 ## Orden en *WindSurf*
+> Procesamiento
 Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adjunto en input: <br>
 1. Elimina la columna `Unnamed: 0`. 
 2. Analiza qué columnas tienen valores nulos. 
