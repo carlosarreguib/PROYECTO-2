@@ -1,91 +1,77 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy import stats
 import numpy as np
+from scipy import stats
 
-# Set the style for dark background
-plt.style.use('dark_background')
+# Set the style for plots
+plt.style.use('fivethirtyeight')
 
 # Read the data
 df = pd.read_csv('input/DATA_Barcelona_Fotocasa_HousingPrices_Augmented.csv')
+print("\n")
+print(df.dtypes)
 
-# Remove 'Unnamed: 0' column
+# Remove Unnamed: 0 column
 df = df.drop('Unnamed: 0', axis=1)
 
-# Analyze null values
-null_analysis = df.isnull().sum()
+# Check null values
 print("\nNull values in each column:")
-print(null_analysis)
+print(df.isnull().sum())
 
-# Check if neighborhood has null values
+# If neighborhood has no null values, fill nulls based on mode per neighborhood
 if df['neighborhood'].isnull().sum() == 0:
-    # Replace null values based on mode per neighborhood
     for column in df.columns:
-        if df[column].isnull().any():
-            df[column] = df.groupby('neighborhood')[column].transform(
-                lambda x: x.fillna(x.mode().iloc[0] if not x.mode().empty else x.median())
-            )
+        if column != 'neighborhood' and df[column].isnull().any():
+            df[column] = df.groupby('neighborhood')[column].transform(lambda x: x.fillna(x.mode().iloc[0] if not x.mode().empty else x.mean()))
 
-# Check price calculation consistency
+# Convert rooms, bathroom and square_meters to int
+df['rooms'] = df['rooms'].round().astype(int)
+df['bathroom'] = df['bathroom'].round().astype(int)
+df['square_meters'] = df['square_meters'].round().astype(int)
+
+# Check price consistency
 price_diff = abs(df['square_meters_price'] * df['square_meters'] - df['price'])
 inconsistent_prices = price_diff > 1000
-print(f"\nNumber of inconsistent prices (>1000€ difference): {inconsistent_prices.sum()}")
+print("\nNumber of inconsistent prices:", inconsistent_prices.sum())
 
 # Remove square_meters_price column
 df = df.drop('square_meters_price', axis=1)
 
-# Detect outliers using IQR method with k=3
+# Detect outliers using IQR method
 Q1 = df['price'].quantile(0.25)
 Q3 = df['price'].quantile(0.75)
 IQR = Q3 - Q1
-lower_bound = Q1 - 3 * IQR
-upper_bound = Q3 + 3 * IQR
+k = 2.5
+lower_bound = Q1 - k * IQR
+upper_bound = Q3 + k * IQR
 
-# Separate outliers and create clean dataframe
-df_clean = df[(df['price'] >= lower_bound) & (df['price'] <= upper_bound)]
-df_outliers = df[(df['price'] < lower_bound) | (df['price'] > upper_bound)]
+# Remove outliers
+df_no_outliers = df[(df['price'] >= lower_bound) & (df['price'] <= upper_bound)]
+print(f"\nRemoved {len(df) - len(df_no_outliers)} outliers")
 
-print(f"\nNumber of outliers removed: {len(df_outliers)}")
-
-# Analyze linear relationship between average Price and Neighborhood
-avg_price_by_neighborhood = df_clean.groupby('neighborhood')['price'].mean().reset_index()
-correlation = stats.pearsonr(
-    pd.factorize(avg_price_by_neighborhood['neighborhood'])[0],
-    avg_price_by_neighborhood['price']
-)[0]
-
-print(f"\nCorrelation between Price and Neighborhood: {correlation:.4f}")
-
-# Create both versions of the final dataset
-df_without_dummies = df_clean.copy()
-
-# If correlation is less than 0.1, create version with dummy variables
-if abs(correlation) < 0.1:
-    df_with_dummies = df_clean.copy()
-    neighborhood_dummies = pd.get_dummies(df_with_dummies['neighborhood'], 
-                                        drop_first=True, 
-                                        dtype=int)
-    df_with_dummies = df_with_dummies.drop('neighborhood', axis=1)
-    df_with_dummies = pd.concat([df_with_dummies, neighborhood_dummies], axis=1)
-    
-    # Save both versions
-    df_with_dummies.to_csv('output/barcelona_housing_processed_dummies.csv', index=False)
-
-# Save the version without dummies
-df_without_dummies.to_csv('output/barcelona_housing_processed.csv', index=False)
-
-# Create visualizations
-plt.figure(figsize=(12, 6))
-sns.boxplot(data=df_clean, x='neighborhood', y='price')
+# Create boxplot
+plt.figure(figsize=(15, 8))
+sns.boxplot(data=df_no_outliers, x='neighborhood', y='price')
 plt.xticks(rotation=45, ha='right')
 plt.title('Price Distribution by Neighborhood')
 plt.tight_layout()
-plt.savefig('output/price_distribution.png')
+plt.savefig('output/price_neighborhood_boxplot.png')
 plt.close()
 
-# Print final summary
-print("\nProcessing completed:")
-print(f"Original dataset shape: {df.shape}")
-print(f"Clean dataset shape: {df_clean.shape}")
-print("Files saved: barcelona_housing_processed.csv and price_distribution.png")
+# Calculate correlation using one-way ANOVA
+neighborhoods = df_no_outliers['neighborhood'].unique()
+price_groups = [df_no_outliers[df_no_outliers['neighborhood'] == n]['price'] for n in neighborhoods]
+f_statistic, p_value = stats.f_oneway(*price_groups)
+correlation = np.sqrt(f_statistic / (f_statistic + len(df_no_outliers) - len(neighborhoods)))
+print(f"\nCorrelation strength (based on ANOVA): {correlation:.4f}")
+
+# If correlation is less than 0.25, create dummy variables
+if correlation < 0.25:
+    df_dummy = pd.get_dummies(df_no_outliers, columns=['neighborhood'], drop_first=True, dtype=int)
+    # Save both versions
+    df_dummy.to_csv('output/housing_prices_dummy.csv', index=False)
+    df_no_outliers.to_csv('output/housing_prices_processed.csv', index=False)
+else:
+    df_no_outliers.to_csv('output/housing_prices_processed.csv', index=False)
+    print("\nCorrelation is >= 0.25, dummy variables were not created")

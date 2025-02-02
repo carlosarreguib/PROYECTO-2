@@ -32,8 +32,9 @@ El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` 
 Con Python, Pandas y Matplotlib con fondo `dark_background`, con el archivo adjunto en input: <br>
 1. Elimina la columna `Unnamed: 0`. 
 2. Analiza qué columnas tienen valores nulos. 
-3. Si la columna `Neighborhood` no tiene valores nulos, reemplaza los valores nulos en función de la moda en su columna de cada valor de `neighborhood`. 
-4. Chequea si `Square_meters_price` * `Square_meters` difieren con price con una tolerancia de 1000 euros. 
-5. Elimina la columna `Square_meters_price`. Detecta si hay outliers con el método de IQR con k igual a 3 en `Price` y apartalos del dataframe. 
-6. Analiza si hay una relación lineal entre `price` promedio y `Neighborhood`. Si tal valor es menor de 0.1, con get_dummies de Pandas, transforma la columna `Neighborhood` con drop_first True y dtype a int. 
-7. Guarda dos archivos con extensión csv, uno con la tabla transformada con get_dummies y el otro sin transformarlo.
+3. Si la columna `Neighborhood` no tiene valores nulos, reemplaza los valores nulos en función de la moda en su columna de cada valor de `Neighborhood`. 
+4. En las columnas `Rooms`, `Bathrom` y `Square_meters`, reemplaza a valor `int` redondeando los valores quedandote con la parte entera.
+5. Chequea si `Square_meters_price` * `Square_meters` difieren con price con una tolerancia de 1000 euros. 
+6. Elimina la columna `Square_meters_price`. Detecta si hay outliers con el método de IQR con k igual a 3 en `Price` y apartalos del dataframe. 
+7. Analiza si hay una relación lineal entre `Price` promedio y `Neighborhood`. Si tal valor es menor de 0.1, con get_dummies de Pandas, transforma la columna `Neighborhood` con drop_first True y dtype a int. 
+8. Guarda dos archivos con extensión csv, uno con la tabla transformada con get_dummies y el otro sin transformarlo.
