@@ -42,10 +42,10 @@ Se han cargado todos los datos a una base de datos MySQL creada en Aiven, una pl
 Para la creación de modelos de ML se han utilizado 3 aplicaciones distintas:
 1. BigML: se conecta la plataforma a la base de datos MySQL y se generan los modelos a partir de los datos. Se han generado 4 modelos distintos: Random Forest, Ensemble, Linear Regression y DeepNet.
    Los modelos de BigML han sido exportados a Python para que puedan ser llamados y utilizados en otras aplicaciones:
-     BigML_Random_Forest.py
-     BigML_Ensemble.py
-     BigML_Linear_Regression.py
-     BigML_DeepNet.py
+- BigML_Random_Forest.py
+- BigML_Ensemble.py
+- BigML_Linear_Regression.py
+- BigML_DeepNet.py
 3. Vertex.ai: se han cargado los datos directamente del csv para generar dos modelos distintos, uno con optimización respecto al RMSE y respecto al MAE, para comparar los resultados.
 4. Watson.x: se han cargado los datos directamente del csv y se ha generado un modelo de ML.
 
