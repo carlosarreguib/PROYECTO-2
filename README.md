@@ -4,7 +4,7 @@
 :octocat: :fire: :pray: :muscle: :walking: :thumbsup:<br> <br>
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA y otras herramientas ya conocidas que no requieran programación. <br>
 El proyecto consta de 4 apartados: <br>
-- El primero está desarrollado con `WindSurf`, con el fin de crear codigo con el mínimo esfuerzo en `Python` (sólo se tuvo que corregir o añadir puntualmente).<br>
+- El primero está desarrollado con `WindSurf`, con el fin de crear codigo con el mínimo esfuerzo en `Python` (solo se tuvo que corregir o añadir puntualmente).<br>
 - El segundo apartado está desarrollado con `MySQL`, `Dbeaver` y `Aiven`.<br>
 - El tercer apartado está desarrollado con `BigML`, `Vertex AI` y `IBM Watsonx`.<br>
 - El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` en el backend, y `DAX` en el frontend. <br>
@@ -25,7 +25,7 @@ El proyecto consta de 4 apartados: <br>
 ## Orden en *WindSurf*
 **Procesamiento:** 
 <br>
-Con Python, Pandas y Matplotlib con fondo `dark_background`, con el archivo adjunto en input: <br>
+Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adjunto en input: <br>
 1. Elimina la columna `Unnamed: 0`. 
 2. Analiza qué columnas tienen valores nulos. 
 3. Si la columna `Neighborhood` no tiene valores nulos, reemplaza los valores nulos en función de la moda en su columna de cada valor de `Neighborhood`. 
