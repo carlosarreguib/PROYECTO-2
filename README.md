@@ -2,7 +2,7 @@
 ***Juan Pablo Delzo***<br>
 ***Carlos Arregui***<br> <br>
 :octocat: :fire: :pray: :muscle: :walking: :thumbsup:<br> <br>
-El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA.
+El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA y otras herramientas ya conocidas que no requieran programación. <br>
 El proyecto consta de 4 apartados. <br>
 El primero está desarrollado con `WindSurf`, con el fin de crear codigo con el mínimo esfuerzo en `Python`. (Sólo se tuvo que corregir o añadir puntualmente).<br>
 El segundo apartado está desarrollado con `mysql`, `Dbeaver` y `Aiven`.<br>
