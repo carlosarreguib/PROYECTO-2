@@ -50,5 +50,5 @@ Para la creación de modelos de ML se han utilizado 3 aplicaciones distintas:
 3. **Vertex.ai**: se han cargado los datos directamente del csv para generar dos modelos distintos, uno con optimización respecto al RMSE y respecto al MAE, para comparar los resultados.
 4. **Watson.x**: se han cargado los datos directamente del csv y se ha generado un modelo de ML.
 
-## Visualización de los datos:
+## Visualización de los datos
 Se han generado dos dashboards interactivos en **PowerBI** para visualizar y ver los datos proporcionados para el proyecto. Se adjunta archivo bcn-realestate.pbix
