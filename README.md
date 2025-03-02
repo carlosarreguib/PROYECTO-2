@@ -38,10 +38,10 @@ Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adju
 8. Guarda dos archivos con extensión csv, uno con la tabla transformada con get_dummies y el otro sin transformarlo.
 
 ## Procesamiento de los datos
-> **1. Carga de los datos a una base MySQL:**
+**1. Carga de los datos a una base MySQL:**
 Se han cargado todos los datos a una base de datos MySQL creada en Aiven, una plataforma de gestión de servicios en la nube. Para realizar la carga de los datos, se ha utilizado una plataforma gratuita de gestión de bases de datos llamada DBeaver, la cual se conectó a la base de datos de Aiven y se cargó el csv.
 
-> **2. Modelos de ML:**
+**2. Modelos de ML:**
 Para la creación de modelos de ML se han utilizado 3 aplicaciones distintas:
 1. **BigML**: se conecta la plataforma a la base de datos MySQL y se generan los modelos a partir de los datos. Se han generado 4 modelos distintos: Random Forest, Ensemble, Linear Regression y DeepNet.
    Los modelos de BigML han sido exportados a Python para que puedan ser llamados y utilizados en otras aplicaciones:
