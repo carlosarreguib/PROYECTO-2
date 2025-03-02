@@ -1,4 +1,4 @@
-## Proyecto 2: Predicción del precio de alquiler de la vivienda en Barcelona 
+## Proyecto 2: Predicción del precio de alquiler de la vivienda en Barcelona utilizando herramientas de aprendizaje automático No-Code
 ***Juan Pablo Delzo***<br>
 ***Carlos Arregui***<br> <br>
 :octocat: :fire: :pray: :muscle: :walking: :thumbsup:<br> <br>
