@@ -16,7 +16,7 @@ El proyecto consta de 4 apartados: <br>
 - Transformación de variables.
 > Carga de datos:
 - Creación de base de datos sin herramientas de programación
-> Procesamiento de datos y métodos supersivados:
+> Procesamiento de datos y métodos supervisados:
 - Herramientas ML en IA
 > Explotación de datos:
 - Visualización interactiva de los datos.
