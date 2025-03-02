@@ -22,7 +22,7 @@ El proyecto consta de 4 apartados: <br>
 - Visualización interactiva de los datos.
 - Visualización de modelos. 
 
-## Orden en *WindSurf*
+## Preprocesamiento de datos: órdenes en *WindSurf*
 **Preprocesamiento:** 
 <br>
 Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adjunto en input: <br>
@@ -35,6 +35,7 @@ Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adju
 7. Analiza si hay una relación lineal entre `Price` promedio y `Neighborhood`. Si tal valor es menor de 0.1, con get_dummies de Pandas, transforma la columna `Neighborhood` con drop_first True y dtype a int. 
 8. Guarda dos archivos con extensión csv, uno con la tabla transformada con get_dummies y el otro sin transformarlo.
 
+## Procesamiento de los datos*
 **Carga de los datos a una base MySQL:**
 Se han cargado todos los datos a una base de datos MySQL creada en Aiven, una plataforma de gestión de servicios en la nube. Para realizar la carga de los datos, se ha utilizado una plataforma gratuita de gestión de bases de datos llamada DBeaver, la cual se conectó a la base de datos de Aiven y se cargó el csv.
 
@@ -49,5 +50,5 @@ Para la creación de modelos de ML se han utilizado 3 aplicaciones distintas:
 3. Vertex.ai: se han cargado los datos directamente del csv para generar dos modelos distintos, uno con optimización respecto al RMSE y respecto al MAE, para comparar los resultados.
 4. Watson.x: se han cargado los datos directamente del csv y se ha generado un modelo de ML.
 
-**Visualización de los datos con PowerBI:**
+## Visualización de los datos con PowerBI:*
 Se han generado dos dashboards interactivos en PowerBI para visualizar y ver los datos proporcionados para el proyecto. Se adjunta archivo bcn-realestate.pbix
