@@ -5,7 +5,7 @@
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA.
 El proyecto consta de 3 apartados. <br>
 El primero está desarrollado con `WindSurf`, con el fin de crear codigo con el mínimo esfuerzo en `Python`. (Sólo se tuvo que corregir o añadir puntualmente).<br>
-El segundo apartado está desarrollado con herramientas de ML en IA (`BigML`, `Vertex AI`,`IBM Watsonx`)<br>
+El segundo apartado está desarrollado con herramientas de ML en IA (`BigML`, `Vertex AI` y `IBM Watsonx`)<br>
 El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` en el backend, y `DAX` en el frontend. <br>
 > Preprocesamiento de datos
 - Análisis exploratorio de datos.
