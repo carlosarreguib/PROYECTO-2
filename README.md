@@ -3,19 +3,22 @@
 ***Carlos Arregui***<br> <br>
 :octocat: :fire: :pray: :muscle: :walking: :thumbsup:<br> <br>
 El principal objetivo es que una vez ya desarrollado el primer proyecto de forma tradicional y gracias al feedback recibido, el siguiente paso es utilizar herramientas en IA.
-El proyecto consta de 3 apartados. <br>
+El proyecto consta de 4 apartados. <br>
 El primero está desarrollado con `WindSurf`, con el fin de crear codigo con el mínimo esfuerzo en `Python`. (Sólo se tuvo que corregir o añadir puntualmente).<br>
-El segundo apartado está desarrollado con herramientas de ML en IA (`BigML`, `Vertex AI` y `IBM Watsonx`)<br>
+El segundo apartado está desarrollado con `mysql`, `Dbeaver` y `Aiven`.<br>
+El tercer apartado está desarrollado con `BigML`, `Vertex AI` y `IBM Watsonx`.<br>
 El último apartado está desarrollado en `PowerBI` con `Python` y `PowerQuery` en el backend, y `DAX` en el frontend. <br>
-> Preprocesamiento de datos
+> Preprocesamiento de datos:
 - Análisis exploratorio de datos.
 - Llenado o eliminaciónde datos nulos.
 - Eliminación de outliers.
 - Escalado de datos.
 - Transformación de variables.
-> Procesamiento de datos y métodos supersivados
+> Carga de datos:
+- Creación de base de datos sin herramientas de programación
+> Procesamiento de datos y métodos supersivados:
 - Herramientas ML en IA
-> Explotación de datos
+> Explotación de datos:
 - Visualización interactiva de los datos.
 - Visualización de modelos. 
 
