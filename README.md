@@ -23,7 +23,7 @@ El proyecto consta de 4 apartados: <br>
 - Visualización de modelos. 
 
 ## Orden en *WindSurf*
-**Procesamiento:** 
+**Preprocesamiento:** 
 <br>
 Con Python, Pandas y Matplotlib con fondo `fivethirtyeight`, con el archivo adjunto en input: <br>
 1. Elimina la columna `Unnamed: 0`. 
